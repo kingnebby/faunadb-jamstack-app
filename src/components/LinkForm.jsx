@@ -17,7 +17,7 @@ export default function LinkForm({ refreshLinks }) {
     const body = { name, url, description: desc };
 
     try {
-      const res = await fetch("/api/create-link", {
+      await fetch("/api/create-link", {
         method: "POST",
         body: JSON.stringify(body),
       });

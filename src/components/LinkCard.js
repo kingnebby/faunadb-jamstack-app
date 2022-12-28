@@ -3,7 +3,7 @@ import React from "react";
 export default function LinkCard({ link, refreshLinks }) {
   const archiveLink = async () => {
     link.archived = true;
-    const res = await fetch("/api/update-link", {
+    await fetch("/api/update-link", {
       method: "POST",
       body: JSON.stringify(link),
     });
@@ -12,7 +12,7 @@ export default function LinkCard({ link, refreshLinks }) {
 
   const deleteLink = async () => {
     const _id = link._id;
-    const res = await fetch("/api/delete-link", {
+    await fetch("/api/delete-link", {
       method: "POST",
       body: JSON.stringify({ _id }),
     });
