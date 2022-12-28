@@ -1,15 +1,16 @@
 export const GET_LINKS = `
-  query {
-    allLinks {
-      data {
-        _id
-        name
-        url
-        description
-      }
+query {
+  allLinks {
+    data {
+      _id
+      name
+      url
+      description
+      archived
     }
   }
-  `;
+}
+`;
 
 export const CREATE_LINK = `
 mutation ($url: String!, $name: String!, $description: String!) {
